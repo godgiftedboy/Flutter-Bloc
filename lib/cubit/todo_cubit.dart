@@ -5,7 +5,7 @@ class TodoCubit extends Cubit<List<Todo>> {
   TodoCubit() : super([]);
   void addTodo(String title) {
     if (title.isEmpty) {
-      addError('tittle cannot be empty');
+      addError('Title cannot be empty');
       return;
     }
     final todo = Todo(
