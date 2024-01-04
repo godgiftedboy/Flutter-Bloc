@@ -10,4 +10,10 @@ class TodoCubit extends Cubit<List<Todo>> {
     );
     emit([...state, todo]);
   }
+
+  @override
+  void onChange(Change<List<Todo>> change) {
+    super.onChange(change);
+    print("TodoCubit- $change");
+  }
 }

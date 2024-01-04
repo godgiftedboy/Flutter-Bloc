@@ -35,7 +35,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                 todoTitleController.clear();
                 Navigator.of(context).pop();
 
-                Navigator.pushReplacementNamed(context, '/');
+                // Navigator.pushReplacementNamed(context, '/');
               },
               child: const Text("Add")),
         ],
