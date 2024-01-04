@@ -33,6 +33,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                 BlocProvider.of<TodoCubit>(context)
                     .addTodo(todoTitleController.text.trim());
                 todoTitleController.clear();
+                Navigator.of(context).pop();
 
                 Navigator.pushReplacementNamed(context, '/');
               },
