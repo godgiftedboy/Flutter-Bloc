@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_list/bloc/todo_bloc.dart';
 import 'package:todo_list/cubit/todo_cubit.dart';
 
 class AddTodoPage extends StatefulWidget {
@@ -30,8 +31,10 @@ class _AddTodoPageState extends State<AddTodoPage> {
           const SizedBox(height: 10),
           ElevatedButton(
               onPressed: () {
-                BlocProvider.of<TodoCubit>(context)
-                    .addTodo(todoTitleController.text.trim());
+                // BlocProvider.of<TodoCubit>(context)
+                //     .addTodo(todoTitleController.text.trim());
+                BlocProvider.of<TodoBloc>(context)
+                    .add(AddTodo(title: todoTitleController.text.trim()));
                 todoTitleController.clear();
                 Navigator.of(context).pop();
 

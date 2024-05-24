@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_list/bloc/todo_bloc.dart';
 import 'package:todo_list/cubit/todo_cubit.dart';
 import 'package:todo_list/models/todo_model.dart';
 
@@ -13,7 +14,7 @@ class TodoList extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Todo-List"),
       ),
-      body: BlocBuilder<TodoCubit, List<Todo>>(
+      body: BlocBuilder<TodoBloc, List<Todo>>(
         builder: (context, todos) {
           return ListView.builder(
             itemCount: todos.length,
